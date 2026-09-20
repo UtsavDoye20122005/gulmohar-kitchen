@@ -1,0 +1,138 @@
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+/* Gulmohar Kitchen — warm charcoal, cream, terracotta. Three hues only. */
+:root {
+  --cream: #f3eadf;
+  --cream-deep: #e7d9c6;
+  --ink: #1c1612;
+  --ink-soft: #3a322c;
+  --terracotta: #c45c3a;
+  --terracotta-deep: #9e4228;
+  --paper: #faf6f0;
+
+  --background: var(--cream);
+  --foreground: var(--ink);
+  --card: var(--paper);
+  --card-foreground: var(--ink);
+  --popover: var(--paper);
+  --popover-foreground: var(--ink);
+  --primary: var(--terracotta);
+  --primary-foreground: #fff8f3;
+  --secondary: var(--ink);
+  --secondary-foreground: var(--cream);
+  --muted: var(--cream-deep);
+  --muted-foreground: #5c534c;
+  --accent: var(--terracotta);
+  --accent-foreground: #fff8f3;
+  --destructive: #8b2e1f;
+  --border: color-mix(in srgb, var(--ink) 16%, var(--cream));
+  --input: color-mix(in srgb, var(--ink) 18%, var(--cream));
+  --ring: var(--terracotta);
+  --radius: 0.125rem;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-cream: var(--cream);
+  --color-cream-deep: var(--cream-deep);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-terracotta: var(--terracotta);
+  --color-terracotta-deep: var(--terracotta-deep);
+  --color-paper: var(--paper);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --font-sans: var(--font-dm-sans), "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-fraunces), "Fraunces", ui-serif, Georgia, serif;
+
+  --text-kicker: 0.6875rem;
+  --text-body: 1.0625rem;
+  --text-lede: 1.25rem;
+  --text-title: clamp(1.5rem, 1.1rem + 1.4vw, 2.25rem);
+  --text-display: clamp(2.15rem, 1.1rem + 3.4vw, 4.25rem);
+  --text-hero: clamp(2.5rem, 0.6rem + 8vw, 6rem);
+
+  --radius-sm: 0.0625rem;
+  --radius-md: 0.125rem;
+  --radius-lg: 0.125rem;
+  --radius-xl: 0.25rem;
+  --radius-2xl: 0.25rem;
+  --radius-3xl: 0.25rem;
+  --radius-4xl: 0.25rem;
+
+  --shadow-soft: 0 18px 40px -28px rgb(28 22 18 / 0.45);
+  --shadow-lift: 0 2px 0 rgb(28 22 18 / 0.08);
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    background: var(--cream);
+    color: var(--ink);
+    font-family: var(--font-sans);
+    font-size: var(--text-body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  .font-display {
+    font-family: var(--font-display);
+    font-optical-sizing: auto;
+    font-weight: 560;
+    letter-spacing: -0.035em;
+    line-height: 0.95;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--terracotta);
+    outline-offset: 3px;
+  }
+
+  ::selection {
+    background: color-mix(in srgb, var(--terracotta) 28%, var(--cream));
+    color: var(--ink);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
