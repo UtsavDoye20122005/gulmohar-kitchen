@@ -40,9 +40,3 @@ export const reserve = {
   ],
 };
 
-export const enquiryCopy = {
-  nameLabel: "Name",
-  phoneLabel: "Phone",
-  messageLabel: "Message",
-  submitLabel: "Send to the desk",
-};

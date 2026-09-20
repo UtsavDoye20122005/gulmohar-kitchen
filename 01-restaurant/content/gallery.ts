@@ -4,11 +4,17 @@ export type GalleryImage = {
   alt: string;
   caption: string;
   span: "normal" | "wide" | "tall";
+  group: "room" | "plate";
 };
 
 export const gallery = {
   introNote:
     "All photographs are from our own room, the tandoor bay, and a few plates we were willing to let go cold for a minute.",
+  groups: [
+    { id: "all", label: "The whole house" },
+    { id: "room", label: "The room" },
+    { id: "plate", label: "The plates" },
+  ] as const,
   images: [
     {
       id: "room-evening",
@@ -16,6 +22,7 @@ export const gallery = {
       alt: "Evening service in the main dining room with pendant lights and set tables",
       caption: "The long room, 7:40 pm, before the College Road rush.",
       span: "wide",
+      group: "room",
     },
     {
       id: "plated-curry",
@@ -23,6 +30,7 @@ export const gallery = {
       alt: "North Indian thali with dal, sabzi, roti and rice on a metal plate",
       caption: "A weekday thali for two who could not decide.",
       span: "tall",
+      group: "plate",
     },
     {
       id: "tandoor-bread",
@@ -30,6 +38,7 @@ export const gallery = {
       alt: "Close-up of a rich Indian curry in a copper kadhai",
       caption: "Butter chicken, not too sweet — as promised.",
       span: "normal",
+      group: "plate",
     },
     {
       id: "paneer",
@@ -37,6 +46,7 @@ export const gallery = {
       alt: "Paneer curry with cream and spices in a dark bowl",
       caption: "Malai paneer, after the tikka has gone into gravy.",
       span: "normal",
+      group: "plate",
     },
     {
       id: "kebab",
@@ -44,6 +54,7 @@ export const gallery = {
       alt: "Tandoori kebabs on a platter with onions and lime",
       caption: "Tangdi and seekh, from the first tandoor of dinner.",
       span: "wide",
+      group: "plate",
     },
     {
       id: "fine-plate",
@@ -51,6 +62,7 @@ export const gallery = {
       alt: "Plated Continental dish with sauce and herbs in a restaurant setting",
       caption: "The grilled catch, when the fisherman in Copargaon calls early.",
       span: "tall",
+      group: "plate",
     },
     {
       id: "bar-counter",
@@ -58,6 +70,7 @@ export const gallery = {
       alt: "Restaurant bar counter with bottles and warm lighting",
       caption: "No hard bar. Plenty of nimbu soda and conversation.",
       span: "normal",
+      group: "room",
     },
     {
       id: "dessert",
@@ -65,6 +78,7 @@ export const gallery = {
       alt: "Chocolate dessert in a glass with cream",
       caption: "Dark chocolate pot. The last argument at the table.",
       span: "normal",
+      group: "plate",
     },
     {
       id: "courtyard",
@@ -72,6 +86,7 @@ export const gallery = {
       alt: "Outdoor restaurant seating with string lights",
       caption: "The Gulmohar Plaza courtyard, winter evenings only.",
       span: "wide",
+      group: "room",
     },
   ] satisfies GalleryImage[],
 };
